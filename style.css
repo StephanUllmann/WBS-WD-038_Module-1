@@ -1,57 +1,221 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  color: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-family: "Roboto Slab", serif;
+  background-color: #00235b;
+  color: #ffdd83;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 nav {
-  border: 2px solid green;
+  background-color: #e21818;
   display: flex;
   justify-content: space-between;
+  color: #98dfd6;
+  padding: 1rem 1.75rem;
 }
 
 .nav-left {
   align-items: center;
-  border: 2px solid green;
   display: flex;
 }
 
 .nav-right {
-  border: 2px solid green;
   width: 80%;
 }
 
+h1,
+h2 {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-weight: 700;
+  margin: 2rem auto;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
 ul {
-  border: 2px solid green;
   display: flex;
   justify-content: space-between;
 }
 
-li {
-  border: 2px solid green;
+.nav-right a {
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.nav-right a:hover,
+.nav-right a:active {
+  color: #669690;
+  text-decoration: underline;
 }
 
 header {
-  border: 2px solid orange;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 4rem;
 }
 
 #duck {
-  border: 2px solid yellow;
   display: flex;
+  text-transform: uppercase;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .text {
-  border: 2px solid yellow;
+  text-shadow: 1px 1px #669690;
 }
 
 .text p {
-  border: 2px solid yellow;
+  /* text-shadow: 1px 1px #669690; */
+  padding: 0.25rem 1rem;
 }
 
-.duck {
-  border: 2px solid yellow;
+.duck img {
+  /* border: 2px solid yellow; */
+  width: 200px;
+  aspect-ratio: 1 / 1;
 }
 
 #emergency {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
+  padding: 2rem 0;
 }
 
 .grid-container {
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 80%;
@@ -59,8 +223,21 @@ header {
   margin: 0 auto;
 }
 
+.grid-container a {
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.grid-container .grid-item:hover,
+.grid-container .grid-item:active {
+  background-color: #e21818;
+  color: #98dfd6;
+  border: 2px solid black;
+}
+
 .grid-item {
-  border: 2px solid pink;
+  border: 2px solid transparent;
+  border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,11 +248,56 @@ form {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
+  margin: 1rem;
+}
+
+form *:not(button) {
+  background-color: #e21818;
+}
+
+form *:not(button):focus {
+  background-color: #ffdd83;
+}
+
+#contact button {
+  color: #fff;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  background-color: #669690;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 2px 2px #669690;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#contact button:hover {
+  background-color: #84d9cf;
+}
+#contact button:active {
+  background-color: #84d9cf;
+  box-shadow: none;
+  transform: translateY(1px);
 }
 
 footer {
   align-items: center;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
+}
+
+footer img {
+  margin: 1.75rem;
+  width: 50px;
+  aspect-ratio: 1 / 1;
+  animation: rotate 4.2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
 }
